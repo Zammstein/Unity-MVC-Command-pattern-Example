@@ -5,6 +5,6 @@ using UnityEngine.Events;
 /// Simple class to represent arguments passed with commands.
 /// </summary>
 namespace Assets.Scripts.EventManager {
-    class GameEvent : UnityEvent<Dictionary<string, object>> {
+    class GameEvent : UnityEvent<object> {
     }
 }

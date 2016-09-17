@@ -15,14 +15,11 @@ public class TestController : MonoBehaviour {
         EventManager.StartListening(TestEvents.ADD_ONE, OnTestEventTriggered);
 	}
 
-    void OnTestEventTriggered(Dictionary<string, object> args) {
+    void OnTestEventTriggered(object args) {
         TestModel tm = (TestModel)ModelManager.GetModel(TestModel.ID);
-        tm.SetAmount(tm.GetAmount() + (int) args["DATA"]);
+        tm.SetAmount(tm.GetAmount() + (int) args);
 
-
-        Dictionary<string, object> args2 = new Dictionary<string, object>();
-        args2.Add("DATA", tm);
-        EventManager.TriggerEvent(TestModel.UPDATE_EVENT, args2);
+        EventManager.TriggerEvent(TestModel.UPDATE_EVENT, tm);
     }
 
     // Update is called once per frame

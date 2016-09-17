@@ -15,8 +15,8 @@ public class TestView : MonoBehaviour {
         EventManager.StartListening(TestModel.UPDATE_EVENT, OnTestModelUpdated);
 	}
 
-    private void OnTestModelUpdated(Dictionary<string, object> arg0) {
-        textView.text = ((TestModel) arg0["DATA"]).GetAmount().ToString();
+    private void OnTestModelUpdated(object arg0) {
+        textView.text = ((TestModel) arg0).GetAmount().ToString();
     }
 
     void OnDestroy() {
@@ -24,8 +24,6 @@ public class TestView : MonoBehaviour {
     }
 
     public void AddOne() {
-        Dictionary<string, object> args = new Dictionary<string, object>();
-        args.Add("DATA", 1);
-        EventManager.TriggerEvent(TestEvents.ADD_ONE, args);
+        EventManager.TriggerEvent(TestEvents.ADD_ONE, 1);
     }
 }
