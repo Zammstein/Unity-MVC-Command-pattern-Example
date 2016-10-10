@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /// <summary>
-/// This class holds all models. At the start of the game the Init function should be called.
+/// This class holds all models.
 /// When creating a new persistant model, you should add it to the dictinary in the Init function.
 /// </summary>
 public class ModelManager : MonoBehaviour {
@@ -16,15 +16,17 @@ public class ModelManager : MonoBehaviour {
             if (!manager) {
                 manager = FindObjectOfType(typeof(ModelManager)) as ModelManager;
 
-                if (!manager) {
+                if (!manager) 
                     Debug.LogError("There needs to be one active ModelManager script on a GameObject in your scene.");
-                } else {
+                else 
                     manager.Init();
-                }
             }
-
             return manager;
         }
+    }
+
+    void Start() {
+        ModelManager callInit = instance;
     }
 
     void Init() {

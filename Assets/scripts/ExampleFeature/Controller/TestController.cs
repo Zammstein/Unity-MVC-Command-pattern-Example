@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
-using System.Collections.Generic;
 
 /// <summary>
 /// This is an example implementation of a controller class
