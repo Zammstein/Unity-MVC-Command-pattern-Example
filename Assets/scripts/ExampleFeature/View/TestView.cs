@@ -14,8 +14,8 @@ public class TestView : MonoBehaviour {
         EventManager.StartListening(TestModel.UPDATE_EVENT, OnTestModelUpdated);
 	}
 
-    private void OnTestModelUpdated(object arg0) {
-        textView.text = ((TestModel) arg0).GetAmount().ToString();
+    private void OnTestModelUpdated(object[] args) {
+        textView.text = ((TestModel) args[0]).GetAmount().ToString();
     }
 
     void OnDestroy() {

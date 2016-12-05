@@ -39,7 +39,7 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    public static void StartListening(string eventName, UnityAction<object> listener) {
+    public static void StartListening(string eventName, UnityAction<object[]> listener) {
         GameEvent thisEvent = null;
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.AddListener(listener);
@@ -51,7 +51,7 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    public static void StopListening(string eventName, UnityAction<object> listener) {
+    public static void StopListening(string eventName, UnityAction<object[]> listener) {
         if (eventManager == null) return;
         GameEvent thisEvent = null;
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent)) {
@@ -59,11 +59,7 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    public static void TriggerEvent(string eventName) {
-        TriggerEvent(eventName, null);
-    }
-
-    public static void TriggerEvent(string eventName, object arguments) {
+    public static void TriggerEvent(string eventName, params object[] arguments) {
         GameEvent thisEvent = null;
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.Invoke(arguments);

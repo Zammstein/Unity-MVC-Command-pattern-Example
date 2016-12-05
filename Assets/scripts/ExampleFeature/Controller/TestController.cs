@@ -12,9 +12,9 @@ public class TestController : MonoBehaviour {
         EventManager.StartListening(TestEvents.ADD_ONE, OnTestEventTriggered);
 	}
 
-    void OnTestEventTriggered(object args) {
+    void OnTestEventTriggered(object[] args) {
         TestModel tm = (TestModel)ModelManager.GetModel(TestModel.ID);
-        tm.SetAmount(tm.GetAmount() + (int) args);
+        tm.SetAmount(tm.GetAmount() + (int) args[0]);
 
         EventManager.TriggerEvent(TestModel.UPDATE_EVENT, tm);
     }
