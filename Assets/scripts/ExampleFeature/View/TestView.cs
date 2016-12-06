@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// TestView
+/// <summary>
+/// Author: Sam Meyer
 /// <summary>
 /// Views are scripts that must be attached to a gameobject in Unity.
 /// You can trigger events from here that will adjust models.

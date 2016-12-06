@@ -1,4 +1,8 @@
 ﻿/// <summary>
+/// TestModel
+/// <summary>
+/// Author: Sam Meyer
+/// <summary>
 /// Models will only hold data in a structured way. 
 /// Every persistant model must have an ID so that it can be indexed by the model manager.
 /// The UPDATE_EVENT is used to let views know when a model has been updated.

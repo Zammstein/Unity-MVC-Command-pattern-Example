@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// TestController
+/// <summary>
+/// Author: Sam Meyer
 /// <summary>
 /// This is an example implementation of a controller class
 /// In this example this controller will listen to commands from the test view.

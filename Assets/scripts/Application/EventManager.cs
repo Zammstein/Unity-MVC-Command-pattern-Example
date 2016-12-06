@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
-
+/// <summary>
+/// EventManager
+/// <summary>
+/// Author: Sam Meyer
 /// <summary>
 /// EventManager class from the official Unity web page. Minor modifications where made to be able to send data with a command in the form of an object.
 /// </summary>

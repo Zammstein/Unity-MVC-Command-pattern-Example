@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// ModelManager
+/// <summary>
+/// Author: Sam Meyer
 /// <summary>
 /// This class holds all models.
 /// When creating a new persistant model, you should add it to the dictinary in the Init function.
